@@ -1,0 +1,103 @@
+.formBox {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 400px;
+}
+
+.form-control {
+  z-index: 1;
+}
+
+.calendar {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	overflow: auto;
+	height: 95%;
+	box-shadow: 0px 0px 30px #888888;
+}
+.not-current {
+	color: #c2c2c2;
+}
+.second-month {
+	background-color: rgb(235,235,240);
+}
+
+.bh {
+	background-color: rgb(137, 104, 182);
+	color: white;
+}
+
+i {
+	font-size: 65%;
+}
+
+b {
+	color: red;
+}
+
+.selected {
+	background-color: rgb(68, 199, 183);
+	color: white;
+}
+
+.help-block {
+	text-align: right;
+}
+
+.shader {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: rgba(176, 176, 176, 0.5);
+  z-index: 2;
+}
+.error-box, .success-box {
+	border-radius: 10px;
+	position: absolute;
+	right: 200px;
+	left: 200px;
+	top: 100px;
+	box-shadow: 0px 0px 60px #888888;
+  padding-left: 20px;
+  z-index: 3;
+}
+
+.exclamation-mark, .tick {
+	font-size: 1000%;
+}
+
+.error-message, .success-message {
+	position: inherit;
+	top: 24%;
+  color: white;
+}
+
+.error-box {
+  background-color: rgb(251, 197, 197);
+}
+.exclamation-mark {
+  color: rgb(255, 76, 47);
+}
+.error-message{
+  left: 100px;
+}
+
+.success-box {
+  background-color: rgb(201, 251, 197);
+}
+.tick {
+  color: rgb(47, 255, 74);
+}
+.success-message {
+  left: 160px;
+}
+
+.close {
+  position: inherit;
+  top: 5px;
+  right: 10px;
+}
