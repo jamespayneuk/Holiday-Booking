@@ -46,3 +46,13 @@ $(document).ready(function(){
     window.location.href = 'http://localhost:8888/main.php';
   })
 })
+
+function getStaffList() {
+  $.getJSON( "getStaffList.php", function( data ) {
+    
+    $.each( data.staff, function( key, val ) {
+      $('#stafflist').append('<option id=' + val + '>' + val + '</option>');
+    });
+
+  });
+}
