@@ -4,6 +4,12 @@
 	left: 10px;
 	width: 400px;
 }
+.allowanceBox {
+	position: absolute;
+	top: 150px;
+	left: 10px;
+	width: 400px;
+}
 
 .form-control {
   z-index: 1;

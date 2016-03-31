@@ -56,6 +56,23 @@ $(document).ready(function(){
     });
   });
 
+  $('#addStaffForm').submit( function(e) {
+    e.preventDefault();
+      $.ajax({
+      url: 'addNewStaffMember.php',
+      type: 'post',
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function(data) {
+         if (data.errors.length == 0) {
+           alert('Staff Member Added')
+         } else {
+           alert('Error. Website down or Staff Member already exists.')
+        }         
+       }
+    });
+  });
+
   $('.modal-close').click(function(){
     window.location.reload();
   });
@@ -70,10 +87,29 @@ function getStaffList() {
 }
 
 
-function getListOfDatesAlreadyBooked(){
+function getListOfDatesAlreadyBooked(admin=false){
   $.getJSON( "getListOfDatesAlreadyBooked.php", function( data ) {
+    var staff = {};
+
     $.each( data.dates, function( key, val ) {
       $('#' + key).addClass('already-taken').append('<strong>' + val + '</strong>')
+      if (staff[val]) {
+        staff[val] += 1;
+      } else {
+        staff[val] = 1;
+      }
     });
+
+    if (admin) {
+      $('#allowanceBox').append('<strong>Current Staff Allowances:</strong>');
+      $.each(staff, function(key, val) {
+        $('#allowanceBox').append('<p>' + key + ': ' + val + '</p>');
+      })
+    }
+
   });
 } 
+
+
+
+

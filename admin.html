@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="main style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <div class="formBox">
+      <form id="addStaffForm" action="#" method="POST">
+        <label>Add New Staff Member:</label>
+        <div class="form-group form-horizontal">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input id="newStaffName" class="form-control" name="firstname">
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-default submit" id="formSubmit">Submit</button>
+      </form>
+    </div>
+
+    <div class="allowanceBox" id="allowanceBox">
+      
+    </div>
+
+    <div class="calendar">
+      <table class="table table-bordered">
+        <thead>
+          <th width="128px">Mon</th>
+          <th width="128px">Tue</th>
+          <th width="128px">Wed</th>
+          <th width="128px">Thr</th>
+          <th width="128px">Fri</th>
+          <th width="128px">Sat</th>
+          <th width="128px">Sun</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="not-current">28 Dec</td>
+            <td class="not-current">29 Dec</td>
+            <td class="not-current">30 Dec</td>
+            <td class="not-current">31 Dec</td>
+            <td id='2016-1-1' class='cell'> 1 Jan </td>
+            <td id='2016-1-2' class='cell'> 2 Jan </td>
+            <td id='2016-1-3' class='cell'> 3 Jan </td>
+          </tr>
+          <tr>
+            <td id='2016-1-4' class='cell'> 4 Jan </td>
+            <td id='2016-1-5' class='cell'> 5 Jan </td>
+            <td id='2016-1-6' class='cell'> 6 Jan </td>
+            <td id='2016-1-7' class='cell'> 7 Jan </td>
+            <td id='2016-1-8' class='cell'> 8 Jan </td>
+            <td id='2016-1-9' class='cell'> 9 Jan </td>
+            <td id='2016-1-10' class='cell'> 10 Jan </td>
+          </tr>
+          <tr>
+            <td id='2016-1-11' class='cell'> 11 Jan </td>
+            <td id='2016-1-12' class='cell'> 12 Jan </td>
+            <td id='2016-1-13' class='cell'> 13 Jan </td>
+            <td id='2016-1-14' class='cell'> 14 Jan </td>
+            <td id='2016-1-15' class='cell'> 15 Jan </td>
+            <td id='2016-1-16' class='cell'> 16 Jan </td>
+            <td id='2016-1-17' class='cell'> 17 Jan </td>
+          </tr>
+          <tr>
+            <td id='2016-1-18' class='cell'> 18 Jan </td>
+            <td id='2016-1-19' class='cell'> 19 Jan </td>
+            <td id='2016-1-20' class='cell'> 20 Jan </td>
+            <td id='2016-1-21' class='cell'> 21 Jan </td>
+            <td id='2016-1-22' class='cell'> 22 Jan </td>
+            <td id='2016-1-23' class='cell'> 23 Jan </td>
+            <td id='2016-1-24' class='cell'> 24 Jan </td>
+          </tr>
+          <tr>
+            <td id='2016-1-25' class='cell'> 25 Jan </td>
+            <td id='2016-1-26' class='cell'> 26 Jan </td>
+            <td id='2016-1-27' class='cell'> 27 Jan </td>
+            <td id='2016-1-28' class='cell'> 28 Jan </td>
+            <td id='2016-1-29' class='cell'> 29 Jan </td>
+            <td id='2016-1-30' class='cell'> 30 Jan </td>
+            <td id='2016-1-31' class='cell'> 31 Jan </td>
+          </tr>
+          <tr>
+            <td id='2016-2-1' class='second-month cell'> 1 Feb </td>
+            <td id='2016-2-2' class='second-month cell'> 2 Feb </td>
+            <td id='2016-2-3' class='second-month cell'> 3 Feb </td>
+            <td id='2016-2-4' class='second-month cell'> 4 Feb </td>
+            <td id='2016-2-5' class='second-month cell'> 5 Feb </td>
+            <td id='2016-2-6' class='second-month cell'> 6 Feb </td>
+            <td id='2016-2-7' class='second-month cell'> 7 Feb </td>
+          </tr>
+          <tr>
+            <td id='2016-2-8' class='second-month cell'> 8 Feb </td>
+            <td id='2016-2-9' class='second-month cell'> 9 Feb </td>
+            <td id='2016-2-10' class='second-month cell'> 10 Feb </td>
+            <td id='2016-2-11' class='second-month cell'> 11 Feb </td>
+            <td id='2016-2-12' class='second-month cell'> 12 Feb </td>
+            <td id='2016-2-13' class='second-month cell'> 13 Feb </td>
+            <td id='2016-2-14' class='second-month cell'> 14 Feb </td>
+          </tr>
+          <tr>
+            <td id='2016-2-15' class='second-month cell'> 15 Feb </td>
+            <td id='2016-2-16' class='second-month cell'> 16 Feb </td>
+            <td id='2016-2-17' class='second-month cell'> 17 Feb </td>
+            <td id='2016-2-18' class='second-month cell'> 18 Feb </td>
+            <td id='2016-2-19' class='second-month cell'> 19 Feb </td>
+            <td id='2016-2-20' class='second-month cell'> 20 Feb </td>
+            <td id='2016-2-21' class='second-month cell'> 21 Feb </td>
+          </tr>
+          <tr>
+            <td id='2016-2-22' class='second-month cell'> 22 Feb </td>
+            <td id='2016-2-23' class='second-month cell'> 23 Feb </td>
+            <td id='2016-2-24' class='second-month cell'> 24 Feb </td>
+            <td id='2016-2-25' class='second-month cell'> 25 Feb </td>
+            <td id='2016-2-26' class='second-month cell'> 26 Feb </td>
+            <td id='2016-2-27' class='second-month cell'> 27 Feb </td>
+            <td id='2016-2-28' class='second-month cell'> 28 Feb </td>
+          </tr>
+          <tr>
+            <td id='2016-2-29' class='second-month cell'> 29 Feb </td>
+            <td id='2016-3-1' class='cell'> 1 Mar </td>
+            <td id='2016-3-2' class='cell'> 2 Mar </td>
+            <td id='2016-3-3' class='cell'> 3 Mar </td>
+            <td id='2016-3-4' class='cell'> 4 Mar </td>
+            <td id='2016-3-5' class='cell'> 5 Mar </td>
+            <td id='2016-3-6' class='cell'> 6 Mar </td>
+          </tr>
+          <tr>
+            <td id='2016-3-7' class='cell'> 7 Mar </td>
+            <td id='2016-3-8' class='cell'> 8 Mar </td>
+            <td id='2016-3-9' class='cell'> 9 Mar </td>
+            <td id='2016-3-10' class='cell'> 10 Mar </td>
+            <td id='2016-3-11' class='cell'> 11 Mar </td>
+            <td id='2016-3-12' class='cell'> 12 Mar </td>
+            <td id='2016-3-13' class='cell'> 13 Mar </td>
+          </tr>
+          <tr>
+            <td id='2016-3-14' class='cell'> 14 Mar </td>
+            <td id='2016-3-15' class='cell'> 15 Mar </td>
+            <td id='2016-3-16' class='cell'> 16 Mar </td>
+            <td id='2016-3-17' class='cell'> 17 Mar </td>
+            <td id='2016-3-18' class='cell'> 18 Mar </td>
+            <td id='2016-3-19' class='cell'> 19 Mar </td>
+            <td id='2016-3-20' class='cell'> 20 Mar </td>
+          </tr>
+          <tr>
+            <td id='2016-3-21' class='cell'> 21 Mar </td>
+            <td id='2016-3-22' class='cell'> 22 Mar </td>
+            <td id='2016-3-23' class='cell'> 23 Mar </td>
+            <td id='2016-3-24' class='cell'> 24 Mar </td>
+            <td id='2016-3-25' class='cell'> 25 Mar </td>
+            <td id='2016-3-26' class='cell'> 26 Mar </td>
+            <td id='2016-3-27' class='cell'> 27 Mar </td>
+          </tr>
+          <tr>
+            <td id='2016-3-28' class='cell'> 28 Mar </td>
+            <td id='2016-3-29' class='cell'> 29 Mar </td>
+            <td id='2016-3-30' class='cell'> 30 Mar </td>
+            <td id='2016-3-31' class='cell'> 31 Mar </td>
+            <td id='2016-4-1' class='second-month cell'> 1 Apr </td>
+            <td id='2016-4-2' class='second-month cell'> 2 Apr </td>
+            <td id='2016-4-3' class='second-month cell'> 3 Apr </td>
+          </tr>
+          <tr>
+            <td id='2016-4-4' class='second-month cell'> 4 Apr </td>
+            <td id='2016-4-5' class='second-month cell'> 5 Apr </td>
+            <td id='2016-4-6' class='second-month cell'> 6 Apr </td>
+            <td id='2016-4-7' class='second-month cell'> 7 Apr </td>
+            <td id='2016-4-8' class='second-month cell'> 8 Apr </td>
+            <td id='2016-4-9' class='second-month cell'> 9 Apr </td>
+            <td id='2016-4-10' class='second-month cell'> 10 Apr </td>
+          </tr>
+          <tr>
+            <td id='2016-4-11' class='second-month cell'> 11 Apr </td>
+            <td id='2016-4-12' class='second-month cell'> 12 Apr </td>
+            <td id='2016-4-13' class='second-month cell'> 13 Apr </td>
+            <td id='2016-4-14' class='second-month cell'> 14 Apr </td>
+            <td id='2016-4-15' class='second-month cell'> 15 Apr </td>
+            <td id='2016-4-16' class='second-month cell'> 16 Apr </td>
+            <td id='2016-4-17' class='second-month cell'> 17 Apr </td>
+          </tr>
+          <tr>
+            <td id='2016-4-18' class='second-month cell'> 18 Apr </td>
+            <td id='2016-4-19' class='second-month cell'> 19 Apr </td>
+            <td id='2016-4-20' class='second-month cell'> 20 Apr </td>
+            <td id='2016-4-21' class='second-month cell'> 21 Apr </td>
+            <td id='2016-4-22' class='second-month cell'> 22 Apr </td>
+            <td id='2016-4-23' class='second-month cell'> 23 Apr </td>
+            <td id='2016-4-24' class='second-month cell'> 24 Apr </td>
+          </tr>
+          <tr>
+            <td id='2016-4-25' class='second-month cell'> 25 Apr </td>
+            <td id='2016-4-26' class='second-month cell'> 26 Apr </td>
+            <td id='2016-4-27' class='second-month cell'> 27 Apr </td>
+            <td id='2016-4-28' class='second-month cell'> 28 Apr </td>
+            <td id='2016-4-29' class='second-month cell'> 29 Apr </td>
+            <td id='2016-4-30' class='second-month cell'> 30 Apr </td>
+            <td id='2016-5-1' class='cell'> 1 May </td>
+          </tr>
+          <tr>
+            <td id='2016-5-2' class='cell'> 2 May </td>
+            <td id='2016-5-3' class='cell'> 3 May </td>
+            <td id='2016-5-4' class='cell'> 4 May </td>
+            <td id='2016-5-5' class='cell'> 5 May </td>
+            <td id='2016-5-6' class='cell'> 6 May </td>
+            <td id='2016-5-7' class='cell'> 7 May </td>
+            <td id='2016-5-8' class='cell'> 8 May </td>
+          </tr>
+          <tr>
+            <td id='2016-5-9' class='cell'> 9 May </td>
+            <td id='2016-5-10' class='cell'> 10 May </td>
+            <td id='2016-5-11' class='cell'> 11 May </td>
+            <td id='2016-5-12' class='cell'> 12 May </td>
+            <td id='2016-5-13' class='cell'> 13 May </td>
+            <td id='2016-5-14' class='cell'> 14 May </td>
+            <td id='2016-5-15' class='cell'> 15 May </td>
+          </tr>
+          <tr>
+            <td id='2016-5-16' class='cell'> 16 May </td>
+            <td id='2016-5-17' class='cell'> 17 May </td>
+            <td id='2016-5-18' class='cell'> 18 May </td>
+            <td id='2016-5-19' class='cell'> 19 May </td>
+            <td id='2016-5-20' class='cell'> 20 May </td>
+            <td id='2016-5-21' class='cell'> 21 May </td>
+            <td id='2016-5-22' class='cell'> 22 May </td>
+          </tr>
+          <tr>
+            <td id='2016-5-23' class='cell'> 23 May </td>
+            <td id='2016-5-24' class='cell'> 24 May </td>
+            <td id='2016-5-25' class='cell'> 25 May </td>
+            <td id='2016-5-26' class='cell'> 26 May </td>
+            <td id='2016-5-27' class='cell'> 27 May </td>
+            <td id='2016-5-28' class='cell'> 28 May </td>
+            <td id='2016-5-29' class='cell'> 29 May </td>
+          </tr>
+          <tr>
+            <td id='2016-5-30' class='cell'> 30 May </td>
+            <td id='2016-5-31' class='cell'> 31 May </td>
+            <td id='2016-6-1' class='second-month cell'> 1 June </td>
+            <td id='2016-6-2' class='second-month cell'> 2 June </td>
+            <td id='2016-6-3' class='second-month cell'> 3 June </td>
+            <td id='2016-6-4' class='second-month cell'> 4 June </td>
+            <td id='2016-6-5' class='second-month cell'> 5 June </td>
+          </tr>
+          <tr>
+            <td id='2016-6-6' class='second-month cell'> 6 June </td>
+            <td id='2016-6-7' class='second-month cell'> 7 June </td>
+            <td id='2016-6-8' class='second-month cell'> 8 June </td>
+            <td id='2016-6-9' class='second-month cell'> 9 June </td>
+            <td id='2016-6-10' class='second-month cell'> 10 June </td>
+            <td id='2016-6-11' class='second-month cell'> 11 June </td>
+            <td id='2016-6-12' class='second-month cell'> 12 June </td>
+          </tr>
+          <tr>
+            <td id='2016-6-13' class='second-month cell'> 13 June </td>
+            <td id='2016-6-14' class='second-month cell'> 14 June </td>
+            <td id='2016-6-15' class='second-month cell'> 15 June </td>
+            <td id='2016-6-16' class='second-month cell'> 16 June </td>
+            <td id='2016-6-17' class='second-month cell'> 17 June </td>
+            <td id='2016-6-18' class='second-month cell'> 18 June </td>
+            <td id='2016-6-19' class='second-month cell'> 19 June </td>
+          </tr>
+          <tr>
+            <td id='2016-6-20' class='second-month cell'> 20 June </td>
+            <td id='2016-6-21' class='second-month cell'> 21 June </td>
+            <td id='2016-6-22' class='second-month cell'> 22 June </td>
+            <td id='2016-6-23' class='second-month cell'> 23 June </td>
+            <td id='2016-6-24' class='second-month cell'> 24 June </td>
+            <td id='2016-6-25' class='second-month cell'> 25 June </td>
+            <td id='2016-6-26' class='second-month cell'> 26 June </td>
+          </tr>
+          <tr>
+            <td id='2016-6-27' class='second-month cell'> 27 June </td>
+            <td id='2016-6-28' class='second-month cell'> 28 June </td>
+            <td id='2016-6-29' class='second-month cell'> 29 June </td>
+            <td id='2016-6-30' class='second-month cell'> 30 June </td>
+            <td id='2016-7-1' class='cell'> 1 July </td>
+            <td id='2016-7-2' class='cell'> 2 July </td>
+            <td id='2016-7-3' class='cell'> 3 July </td>
+          </tr>
+          <tr>
+            <td id='2016-7-4' class='cell'> 4 July </td>
+            <td id='2016-7-5' class='cell'> 5 July </td>
+            <td id='2016-7-6' class='cell'> 6 July </td>
+            <td id='2016-7-7' class='cell'> 7 July </td>
+            <td id='2016-7-8' class='cell'> 8 July </td>
+            <td id='2016-7-9' class='cell'> 9 July </td>
+            <td id='2016-7-10' class='cell'> 10 July </td>
+          </tr>
+          <tr>
+            <td id='2016-7-11' class='cell'> 11 July </td>
+            <td id='2016-7-12' class='cell'> 12 July </td>
+            <td id='2016-7-13' class='cell'> 13 July </td>
+            <td id='2016-7-14' class='cell'> 14 July </td>
+            <td id='2016-7-15' class='cell'> 15 July </td>
+            <td id='2016-7-16' class='cell'> 16 July </td>
+            <td id='2016-7-17' class='cell'> 17 July </td>
+          </tr>
+          <tr>
+            <td id='2016-7-18' class='cell'> 18 July </td>
+            <td id='2016-7-19' class='cell'> 19 July </td>
+            <td id='2016-7-20' class='cell'> 20 July </td>
+            <td id='2016-7-21' class='cell'> 21 July </td>
+            <td id='2016-7-22' class='cell'> 22 July </td>
+            <td id='2016-7-23' class='cell'> 23 July </td>
+            <td id='2016-7-24' class='cell'> 24 July </td>
+          </tr>
+          <tr>
+            <td id='2016-7-25' class='cell'> 25 July </td>
+            <td id='2016-7-26' class='cell'> 26 July </td>
+            <td id='2016-7-27' class='cell'> 27 July </td>
+            <td id='2016-7-28' class='cell'> 28 July </td>
+            <td id='2016-7-29' class='cell'> 29 July </td>
+            <td id='2016-7-30' class='cell'> 30 July </td>
+            <td id='2016-7-31' class='cell'> 31 July </td>
+          </tr>
+          <tr>
+            <td id='2016-8-1' class='second-month cell'> 1 Aug </td>
+            <td id='2016-8-2' class='second-month cell'> 2 Aug </td>
+            <td id='2016-8-3' class='second-month cell'> 3 Aug </td>
+            <td id='2016-8-4' class='second-month cell'> 4 Aug </td>
+            <td id='2016-8-5' class='second-month cell'> 5 Aug </td>
+            <td id='2016-8-6' class='second-month cell'> 6 Aug </td>
+            <td id='2016-8-7' class='second-month cell'> 7 Aug </td>
+          </tr>
+          <tr>
+            <td id='2016-8-8' class='second-month cell'> 8 Aug </td>
+            <td id='2016-8-9' class='second-month cell'> 9 Aug </td>
+            <td id='2016-8-10' class='second-month cell'> 10 Aug </td>
+            <td id='2016-8-11' class='second-month cell'> 11 Aug </td>
+            <td id='2016-8-12' class='second-month cell'> 12 Aug </td>
+            <td id='2016-8-13' class='second-month cell'> 13 Aug </td>
+            <td id='2016-8-14' class='second-month cell'> 14 Aug </td>
+          </tr>
+          <tr>
+            <td id='2016-8-15' class='second-month cell'> 15 Aug </td>
+            <td id='2016-8-16' class='second-month cell'> 16 Aug </td>
+            <td id='2016-8-17' class='second-month cell'> 17 Aug </td>
+            <td id='2016-8-18' class='second-month cell'> 18 Aug </td>
+            <td id='2016-8-19' class='second-month cell'> 19 Aug </td>
+            <td id='2016-8-20' class='second-month cell'> 20 Aug </td>
+            <td id='2016-8-21' class='second-month cell'> 21 Aug </td>
+          </tr>
+          <tr>
+            <td id='2016-8-22' class='second-month cell'> 22 Aug </td>
+            <td id='2016-8-23' class='second-month cell'> 23 Aug </td>
+            <td id='2016-8-24' class='second-month cell'> 24 Aug </td>
+            <td id='2016-8-25' class='second-month cell'> 25 Aug </td>
+            <td id='2016-8-26' class='second-month cell'> 26 Aug </td>
+            <td id='2016-8-27' class='second-month cell'> 27 Aug </td>
+            <td id='2016-8-28' class='second-month cell'> 28 Aug </td>
+          </tr>
+          <tr>
+            <td id='2016-8-29' class='second-month cell'> 29 Aug </td>
+            <td id='2016-8-30' class='second-month cell'> 30 Aug </td>
+            <td id='2016-8-31' class='second-month cell'> 31 Aug </td>
+            <td id='2016-9-1' class='cell'> 1 Sept </td>
+            <td id='2016-9-2' class='cell'> 2 Sept </td>
+            <td id='2016-9-3' class='cell'> 3 Sept </td>
+            <td id='2016-9-4' class='cell'> 4 Sept </td>
+          </tr>
+          <tr>
+            <td id='2016-9-5' class='cell'> 5 Sept </td>
+            <td id='2016-9-6' class='cell'> 6 Sept </td>
+            <td id='2016-9-7' class='cell'> 7 Sept </td>
+            <td id='2016-9-8' class='cell'> 8 Sept </td>
+            <td id='2016-9-9' class='cell'> 9 Sept </td>
+            <td id='2016-9-10' class='cell'> 10 Sept </td>
+            <td id='2016-9-11' class='cell'> 11 Sept </td>
+          </tr>
+          <tr>
+            <td id='2016-9-12' class='cell'> 12 Sept </td>
+            <td id='2016-9-13' class='cell'> 13 Sept </td>
+            <td id='2016-9-14' class='cell'> 14 Sept </td>
+            <td id='2016-9-15' class='cell'> 15 Sept </td>
+            <td id='2016-9-16' class='cell'> 16 Sept </td>
+            <td id='2016-9-17' class='cell'> 17 Sept </td>
+            <td id='2016-9-18' class='cell'> 18 Sept </td>
+          </tr>
+          <tr>
+            <td id='2016-9-19' class='cell'> 19 Sept </td>
+            <td id='2016-9-20' class='cell'> 20 Sept </td>
+            <td id='2016-9-21' class='cell'> 21 Sept </td>
+            <td id='2016-9-22' class='cell'> 22 Sept </td>
+            <td id='2016-9-23' class='cell'> 23 Sept </td>
+            <td id='2016-9-24' class='cell'> 24 Sept </td>
+            <td id='2016-9-25' class='cell'> 25 Sept </td>
+          </tr>
+          <tr>
+            <td id='2016-9-26' class='cell'> 26 Sept </td>
+            <td id='2016-9-27' class='cell'> 27 Sept </td>
+            <td id='2016-9-28' class='cell'> 28 Sept </td>
+            <td id='2016-9-29' class='cell'> 29 Sept </td>
+            <td id='2016-9-30' class='cell'> 30 Sept </td>
+            <td id='2016-10-1' class='second-month cell'> 1 Oct </td>
+            <td id='2016-10-2' class='second-month cell'> 2 Oct </td>
+          </tr>
+          <tr>
+            <td id='2016-10-3' class='second-month cell'> 3 Oct </td>
+            <td id='2016-10-4' class='second-month cell'> 4 Oct </td>
+            <td id='2016-10-5' class='second-month cell'> 5 Oct </td>
+            <td id='2016-10-6' class='second-month cell'> 6 Oct </td>
+            <td id='2016-10-7' class='second-month cell'> 7 Oct </td>
+            <td id='2016-10-8' class='second-month cell'> 8 Oct </td>
+            <td id='2016-10-9' class='second-month cell'> 9 Oct </td>
+          </tr>
+          <tr>
+            <td id='2016-10-10' class='second-month cell'> 10 Oct </td>
+            <td id='2016-10-11' class='second-month cell'> 11 Oct </td>
+            <td id='2016-10-12' class='second-month cell'> 12 Oct </td>
+            <td id='2016-10-13' class='second-month cell'> 13 Oct </td>
+            <td id='2016-10-14' class='second-month cell'> 14 Oct </td>
+            <td id='2016-10-15' class='second-month cell'> 15 Oct </td>
+            <td id='2016-10-16' class='second-month cell'> 16 Oct </td>
+          </tr>
+          <tr>
+            <td id='2016-10-17' class='second-month cell'> 17 Oct </td>
+            <td id='2016-10-18' class='second-month cell'> 18 Oct </td>
+            <td id='2016-10-19' class='second-month cell'> 19 Oct </td>
+            <td id='2016-10-20' class='second-month cell'> 20 Oct </td>
+            <td id='2016-10-21' class='second-month cell'> 21 Oct </td>
+            <td id='2016-10-22' class='second-month cell'> 22 Oct </td>
+            <td id='2016-10-23' class='second-month cell'> 23 Oct </td>
+          </tr>
+          <tr>
+            <td id='2016-10-24' class='second-month cell'> 24 Oct </td>
+            <td id='2016-10-25' class='second-month cell'> 25 Oct </td>
+            <td id='2016-10-26' class='second-month cell'> 26 Oct </td>
+            <td id='2016-10-27' class='second-month cell'> 27 Oct </td>
+            <td id='2016-10-28' class='second-month cell'> 28 Oct </td>
+            <td id='2016-10-29' class='second-month cell'> 29 Oct </td>
+            <td id='2016-10-30' class='second-month cell'> 30 Oct </td>
+          </tr>
+          <tr>
+            <td id='2016-10-31' class='second-month cell'> 31 Oct </td>
+            <td id='2016-11-1' class='cell'> 1 Nov </td>
+            <td id='2016-11-2' class='cell'> 2 Nov </td>
+            <td id='2016-11-3' class='cell'> 3 Nov </td>
+            <td id='2016-11-4' class='cell'> 4 Nov </td>
+            <td id='2016-11-5' class='cell'> 5 Nov </td>
+            <td id='2016-11-6' class='cell'> 6 Nov </td>
+          </tr>
+          <tr>
+            <td id='2016-11-7' class='cell'> 7 Nov </td>
+            <td id='2016-11-8' class='cell'> 8 Nov </td>
+            <td id='2016-11-9' class='cell'> 9 Nov </td>
+            <td id='2016-11-10' class='cell'> 10 Nov </td>
+            <td id='2016-11-11' class='cell'> 11 Nov </td>
+            <td id='2016-11-12' class='cell'> 12 Nov </td>
+            <td id='2016-11-13' class='cell'> 13 Nov </td>
+          </tr>
+          <tr>
+            <td id='2016-11-14' class='cell'> 14 Nov </td>
+            <td id='2016-11-15' class='cell'> 15 Nov </td>
+            <td id='2016-11-16' class='cell'> 16 Nov </td>
+            <td id='2016-11-17' class='cell'> 17 Nov </td>
+            <td id='2016-11-18' class='cell'> 18 Nov </td>
+            <td id='2016-11-19' class='cell'> 19 Nov </td>
+            <td id='2016-11-20' class='cell'> 20 Nov </td>
+          </tr>
+          <tr>
+            <td id='2016-11-21' class='cell'> 21 Nov </td>
+            <td id='2016-11-22' class='cell'> 22 Nov </td>
+            <td id='2016-11-23' class='cell'> 23 Nov </td>
+            <td id='2016-11-24' class='cell'> 24 Nov </td>
+            <td id='2016-11-25' class='cell'> 25 Nov </td>
+            <td id='2016-11-26' class='cell'> 26 Nov </td>
+            <td id='2016-11-27' class='cell'> 27 Nov </td>
+          </tr>
+          <tr>
+            <td id='2016-11-28' class='cell'> 28 Nov </td>
+            <td id='2016-11-29' class='cell'> 29 Nov </td>
+            <td id='2016-11-30' class='cell'> 30 Nov </td>
+            <td id='2016-12-1' class='second-month cell'> 1 Dec </td>
+            <td id='2016-12-2' class='second-month cell'> 2 Dec </td>
+            <td id='2016-12-3' class='second-month cell'> 3 Dec </td>
+            <td id='2016-12-4' class='second-month cell'> 4 Dec </td>
+          </tr>
+          <tr>
+            <td id='2016-12-5' class='second-month cell'> 5 Dec </td>
+            <td id='2016-12-6' class='second-month cell'> 6 Dec </td>
+            <td id='2016-12-7' class='second-month cell'> 7 Dec </td>
+            <td id='2016-12-8' class='second-month cell'> 8 Dec </td>
+            <td id='2016-12-9' class='second-month cell'> 9 Dec </td>
+            <td id='2016-12-10' class='second-month cell'> 10 Dec </td>
+            <td id='2016-12-11' class='second-month cell'> 11 Dec </td>
+          </tr>
+          <tr>
+            <td id='2016-12-12' class='second-month cell'> 12 Dec </td>
+            <td id='2016-12-13' class='second-month cell'> 13 Dec </td>
+            <td id='2016-12-14' class='second-month cell'> 14 Dec </td>
+            <td id='2016-12-15' class='second-month cell'> 15 Dec </td>
+            <td id='2016-12-16' class='second-month cell'> 16 Dec </td>
+            <td id='2016-12-17' class='second-month cell'> 17 Dec </td>
+            <td id='2016-12-18' class='second-month cell'> 18 Dec </td>
+          </tr>
+          <tr>
+            <td id='2016-12-19' class='second-month cell'> 19 Dec </td>
+            <td id='2016-12-20' class='second-month cell'> 20 Dec </td>
+            <td id='2016-12-21' class='second-month cell'> 21 Dec </td>
+            <td id='2016-12-22' class='second-month cell'> 22 Dec </td>
+            <td id='2016-12-23' class='second-month cell'> 23 Dec </td>
+            <td id='2016-12-24' class='second-month cell'> 24 Dec </td>
+            <td id='2016-12-25' class='second-month cell'> 25 Dec </td>
+          </tr>
+          <tr>
+            <td id='2016-12-26' class='second-month cell'> 26 Dec </td>
+            <td id='2016-12-27' class='second-month cell'> 27 Dec </td>
+            <td id='2016-12-28' class='second-month cell'> 28 Dec </td>
+            <td id='2016-12-29' class='second-month cell'> 29 Dec </td>
+            <td id='2016-12-30' class='second-month cell'> 30 Dec </td>
+            <td id='2016-12-31' class='second-month cell'> 31 Dec </td>
+            <td class='not-current'> 1 Jan </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="control.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        getStaffList();
+        getListOfDatesAlreadyBooked(true);
+      });
+   </script>
+
+  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Holiday Booked</h4>
+        </div>
+        <div class="modal-body" id="successDates">
+          <p>These dates have been booked:</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default modal-close" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Failed to book Holiday</h4>
+        </div>
+        <div class="modal-body" id="errorMessages">
+          <p>There were errors with the dates you tried to book:</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger modal-close" data-dismiss="modal">Try Again</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  </body>
+</html>
