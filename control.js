@@ -6,53 +6,74 @@ function getDates(){
   return dates
 }
 
-function wordDates(dates){
+function wordDate(date){
   months = ["","January","Febuary","March","April","May","June","July","August","September","October","November","December"]
   endings = ["th","st","nd","rd","th","th","th","th","th","th"]
 
-  str = ""
-  dates.forEach(function (date,i,dates) {
-    date_array = date.split("-")
-    year = date_array[0]
-    month = months[date_array[1]]
-    day = date_array[2]
-    ending = endings[day.slice(-1)]
+  date_array = date.split("-")
+  year = date_array[0]
+  month = months[date_array[1]]
+  day = date_array[2]
+  ending = endings[day.slice(-1)]
 
-    str += day+ending+" "+month+" "+year+"\n"
-  })
-  return str
+  return day+ending+" "+month+" "+year+"\n"
 }
 
 $(document).ready(function(){
   $(".cell").click(function(){
-    $(this).toggleClass('selected')
+    if ($(this).hasClass('already-taken')) {
+      alert('This date has already been booked')
+    } else {
+      $(this).toggleClass('selected')
+    }
+    
   })
 
-  $('#form').submit(function(){
-    dates = getDates()
+  $('#form').submit( function(e) {
+    e.preventDefault();
+    var dates = getDates();
+    var postData = $(this).serialize() + '&dates=' + dates.join(',');
+    console.log(postData);
+    
+    $.ajax({
+      url: 'bookNewHoliday.php',
+      type: 'post',
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function(data) {
+         if (data.errors.length == 0) {
+           $.each( dates, function( key, val ) {
+             $('#successDates').append('<p>' + wordDate(val) + '</p>');
+           })
+           $('#successModal').modal();
+         } else {
+          $.each( data.errors, function( key, val ) {
+            $('#errorMessages').append('<p>' + val + '</p>');
+          });
+          $('#failModal').modal();
+        }         
+       }
+    });
+  });
 
-    window.alert("Are you sure you want to add these dates?:\n"+wordDates(dates))
-
-
-    $.each(dates, function(i,date){
-      $('<input />').attr('type', 'hidden')
-          .attr('name', i)
-          .attr('value', date)
-          .appendTo('#form');
-    })
-  })
-
-  $(".close").click(function(){
-    window.location.href = 'http://localhost:8888/main.php';
-  })
+  $('.modal-close').click(function(){
+    window.location.reload();
+  });
 })
 
 function getStaffList() {
   $.getJSON( "getStaffList.php", function( data ) {
-    
     $.each( data.staff, function( key, val ) {
-      $('#stafflist').append('<option id=' + val + '>' + val + '</option>');
+      $('#staffList').append('<option id=' + val + '>' + val + '</option>');
     });
-
   });
 }
+
+
+function getListOfDatesAlreadyBooked(){
+  $.getJSON( "getListOfDatesAlreadyBooked.php", function( data ) {
+    $.each( data.dates, function( key, val ) {
+      $('#' + key).addClass('already-taken').append('<strong>' + val + '</strong>')
+    });
+  });
+} 
